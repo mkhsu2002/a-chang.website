@@ -1,6 +1,6 @@
 # 網站版面與搜尋資料查核
 
-日期：2026-09-22。這是本次發布前的驗證快照；實作與本地檢查完成，線上部署狀態以對應 commit 的 Cloudflare check 與公開 readback 為準。
+日期：2026-09-22。實作、本地版面檢查及 Cloudflare 發布完成；本記錄包含本次實際公開 readback，未完成項目明列於限制。
 
 ## 實際觀察
 
@@ -54,4 +54,10 @@
 
 ## 發布記錄
 
-發布目標為 `main` → Cloudflare Pages `a-chang-website`。此發布前快照不宣稱 Cloudflare 已完成建置；請以 [GitHub commits](https://github.com/mkhsu2002/a-chang.website/commits/main/) 的 Cloudflare Pages check 與 https://a-chang-website.pages.dev/ 實際回應交叉核對。
+- 程式版本：`7ab2ee14c625a7261a89d847289a8c71fac71fc4`，已推送 `main`。
+- Cloudflare Pages check：`completed / success`；部署 ID：`52627609-5158-4c35-a06b-358ee5d46f4f`。
+- 公開九頁 HTTP 200、每頁 canonical 正確；OG 為 `image/jpeg`、robots 為純文字、sitemap 為 XML。
+- 線上 `style.css`、`site.js`、`assets/og.jpg`、`robots.txt`、`sitemap.xml` 與本次 `dist` 逐位元比對一致。
+- `/this-page-does-not-exist/` 實際回傳 HTTP 404，含 noindex 的 404 頁。
+- 本地 54 組版面檢查及兩種尺寸全頁截圖完成；最後一次線上瀏覽器連線遇到 `Browser.setDownloadBehavior: Browser context management is not supported`，依身分隔離規則停止該次 UI 操作，未使用其他瀏覽器 fallback。線上確認依 HTTP readback 與部署資產比對，並未聲稱重新截取線上畫面。
+- 此發布紀錄後續為 docs-only commit，使用 Cloudflare 官方 `[CF-Pages-Skip]` 前綴避免再次部署；程式與公開輸出不變。[官方說明](https://developers.cloudflare.com/pages/configuration/git-integration/github-integration/)。

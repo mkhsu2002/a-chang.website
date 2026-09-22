@@ -24,7 +24,7 @@ Cloudflare Pages 建置指令為 `npm run build`，輸出目錄為 `dist`。CSS�
 
 正式切換 `a-chang.org` 時，須先完成 Cloudflare 自訂網域及 DNS，設定 `SITE_URL=https://a-chang.org` 後重新建置；同步驗證 HTTPS、九頁、OG 圖、sitemap、robots、舊網址 301 與不存在頁面 404，再向 Search Console 提交新 sitemap。新舊站網址的轉址亦需一併確認，不可只修改 canonical。
 
-本 repo 沒有 GitHub Actions 或 cron。Cloudflare Git 整合發布狀態以 GitHub `Cloudflare Pages` check 與公開 readback 為準。後續如調整 Cloudflare build watch paths，只納入 `build.mjs`、`style.css`、`stories.json`、`assets/**`、`public/**`、`package.json` 與 `scripts/**`；README/docs-only 更新不應觸發正式建置。此次未更動平台上的 watch paths 設定。
+本 repo 沒有 GitHub Actions 或 cron。Cloudflare Git 整合發布狀態以 GitHub `Cloudflare Pages` check 與公開 readback 為準。後續如調整 Cloudflare build watch paths，只納入 `build.mjs`、`style.css`、`stories.json`、`assets/**`、`public/**`、`package.json` 與 `scripts/**`；README/docs-only 更新不應觸發正式建置。此次未更動平台上的 watch paths 設定；純文件紀錄使用 Cloudflare 官方 `[CF-Pages-Skip]` commit 前綴略過建置。
 
 ## 內容與版型
 
