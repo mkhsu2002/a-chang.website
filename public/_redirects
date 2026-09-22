@@ -1,0 +1,3 @@
+# Verified legacy paths; expand this map after a full crawl/export of the old site.
+/contact /contact/ 301
+/shop/ /products/ 301
