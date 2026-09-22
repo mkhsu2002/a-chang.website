@@ -1,3 +1,5 @@
 # Verified legacy paths; expand this map after a full crawl/export of the old site.
 /contact /contact/ 301
 /shop/ /products/ 301
+/服務項目/ /stories/ 301
+/category/媒體報導/ /press/ 301
